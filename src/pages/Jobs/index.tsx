@@ -3,6 +3,7 @@ import { useJsonReader } from '../../hooks/useJsonReader';
 import { JobData } from '../../interfaces/JobData';
 import { Settings } from '../../interfaces/Settings';
 import './Jobs.scss';
+import { LoadingScreen } from '../../components/LoadingScreen';
 
 interface Props {
 	settings: Settings;
@@ -23,42 +24,44 @@ function Jobs ({ settings, handleTotalPages }: Props) {
 			.catch(err => console.error(err));
 	}, []);
 
-	const currentJobPage = data[currentPage];
-	const currentJobInfo = data[currentPage]?.info[lang];
-	
+	const job = data[currentPage];
+	const jobInfo = data[currentPage]?.info[lang];
+
+	if (!job) return <LoadingScreen />;	
 	return (
 		<article className='Job'>
-			{	currentJobPage && <>
-				<h2 className="Job-company">{currentJobPage.company}</h2>
-				<h3 className="Job-position">{currentJobPage.position}</h3>
+			<div>
+				<h2 className="Job-company">{job.company}</h2>
+				<h3 className="Job-position">{job.position}</h3>
 				<p>
-					{currentJobPage.startDate} - {currentJobPage.endDate}
+					{job.startDate} - {job.endDate}
 				</p>
-				<p className="Job-description">{currentJobInfo.description}</p>
+			</div>
 
+			<p className="Job-description">{jobInfo.description}</p>
+
+			<div>
+				<h3>{(lang === 'en') ? 'Responsibilities' : 'Responsabilidades'}</h3>
+				<p>{jobInfo.responsibilities}</p>
+			</div>
+
+			<div>
+				<h3>{(lang === 'en') ? 'Team' : 'Equipo'}</h3>
+				<p>{jobInfo.team}</p>
+			</div>
+
+			{
+				jobInfo.extraInformation &&
 				<div>
-					<h3>{(lang === 'en') ? 'Responsibilities' : 'Responsabilidades'}</h3>
-					<p>{currentJobInfo.responsibilities}</p>
+					<h3>{(lang === 'en') ? 'Extra Information' : 'Información Extra'}</h3>
+					<p>{jobInfo.extraInformation}</p>
 				</div>
+			}
 
-				<div>
-					<h3>{(lang === 'en') ? 'Team' : 'Equipo'}</h3>
-					<p>{currentJobInfo.team}</p>
-				</div>
-
-				{
-					currentJobInfo.extraInformation &&
-					<div>
-						<h3>{(lang === 'en') ? 'Extra Information' : 'Información Extra'}</h3>
-						<p>{currentJobInfo.extraInformation}</p>
-					</div>
-				}
-
-				<div>
-					<h3>{(lang === 'en') ? 'Technologies' : 'Tecnologías'}</h3>
-					<p>{currentJobPage.technologies}</p>
-				</div>
-			</>	}
+			<div>
+				<h3>{(lang === 'en') ? 'Technologies' : 'Tecnologías'}</h3>
+				<p>{job.technologies}</p>
+			</div>
 		</article>
 	);
 }
