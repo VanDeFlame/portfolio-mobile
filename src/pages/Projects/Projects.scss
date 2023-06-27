@@ -1,0 +1,32 @@
+@import './../../assets/styles/vars';
+
+.Project {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	min-height: 100%;
+}
+
+.Project-buttons {
+	display: flex;	
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin-top: auto;
+
+	a {
+		width: 120px;
+		padding: 8px;
+		border: 2px solid rgba($color-cyan, 0.6);
+		background-color: rgba($color-cyan, 0.25);
+		box-shadow: 
+			inset 2px 2px $color-blue-darker,
+			inset -2px -2px $color-blue-darker;
+		text-align: center;
+		font-weight: bold;
+
+		&:hover {			
+			background-color: rgba($color-cyan, 0.75);
+		}
+	}
+}

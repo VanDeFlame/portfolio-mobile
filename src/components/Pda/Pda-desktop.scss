@@ -1,0 +1,60 @@
+@import './../../assets/styles/vars';
+
+.Pda {
+	max-width: 1000px;
+	max-height: 660px;
+	padding: 64px 48px 64px 60px;
+	aspect-ratio: 16/9;
+}
+
+/* ===== PDA HUD ===== */
+.Pda-overlay {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background: no-repeat left / 100% 100% url('/assets/pda/pda-overlay.svg');
+	pointer-events: none;
+}
+
+.Pda-bg {
+	background: no-repeat left / 100% 100% url('/assets/pda/pda-background.svg');
+}
+
+.Pda-screen {
+	margin: 0 16px;
+
+	&::after {
+		background: linear-gradient(300deg, transparent 25%, rgba($color-cyan-light, 0.2) 50%, transparent 75%);
+		animation-name: bgShineDesktop;
+	}
+}
+
+/* ===== PDA BUTTONS ===== */
+
+.Pda-buttons {
+	bottom: 24px;
+	left: 10%;
+	right: auto;
+	width: 140px;
+}
+
+/* ===== PDA POINTS ===== */ 
+
+.Pda-points {
+	bottom: 32px;
+	left: 32%;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes bgShineDesktop {
+  0% {
+    transform: translate(-150%);
+  }
+  25%, 100% {
+    transform: translate(150%);
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="pdainfobg" width="22.222in" height="12.5in" version="1.1" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <radialGradient id="radialGradient43946" cx="803.02" cy="444.98" r="790.98" gradientTransform="matrix(1 0 0 .55504 0 198)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#095a79" stop-opacity=".5" offset="0"/>
+   <stop stop-color="#00d4ff" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m1594 262v583h-181l-39.004 39.004h-1313l-17.996-17.996v-212l-30.961-30.961v-529.09l69.938-69.938h393l18.063-18.063h331.41l22.542 39.044h415.25l28.36-28.361h226.52l44.875 44.875v169.59l31.999 30.9" fill="url(#radialGradient43946)" fill-opacity=".3"/>
+</svg>

@@ -1,0 +1,36 @@
+@import './../../assets/styles/vars';
+
+.PdaSelector {
+	position: relative;
+	width: 100%;
+	
+	p {
+		margin-left: 33%;
+		margin-bottom: 44px;
+	}
+	
+	span {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 46px;
+		overflow: hidden;
+	}
+}
+
+.PdaSelector-svg {
+  width: 22px;
+  height: 22px;
+  fill: $color-cyan;
+  width: 300px;
+  height: auto;
+}
+
+.PdaSelector-svg > path {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: none;
+  stroke: $color-cyan;
+  stroke-width: 1.5%;
+}

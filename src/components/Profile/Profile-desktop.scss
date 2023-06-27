@@ -1,0 +1,55 @@
+/* ===== RESPONSIVE ===== */
+.Profile-info {
+	align-items: center;
+
+	ul {
+		position: absolute;
+		top: 32px;
+		bottom: 32px;
+		left: 64px;
+		right: 64px;
+	}
+}
+
+/* PDA item selector */
+.Profile-info-item {
+	max-width: 270px;
+	width: 50%;
+
+
+	&:nth-child(odd) {
+		align-self: flex-end;
+		text-align: end;
+	}
+
+	&:nth-child(even) {
+		align-self: start;
+		text-align: start;
+
+		& .PdaSelector {
+			p {
+				margin-left: 0;
+			}
+			span {
+				left: 0;
+				right: 0;
+				transform: scaleX(-1);
+			}
+		}
+	}
+
+	&:nth-last-child(-n+2) .PdaSelector {
+		p {
+			margin: 44px 0 0;
+		}
+		span {
+			top: auto;
+			bottom: 0;
+			transform: scaleY(-1) translateY(50%);
+		}
+	}
+
+	&:nth-last-child(-n+2):nth-child(even) .PdaSelector > span {
+		transform: scale(-1) translateY(50%);
+	}
+}

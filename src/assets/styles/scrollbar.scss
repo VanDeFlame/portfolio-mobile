@@ -1,0 +1,25 @@
+@import 'vars';
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: $color-blue-dark rgba($color-blue-dark, 0.1);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+  background: rgba($color-blue-dark, 0.1);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $color-blue-dark;
+  border-radius: 10px;
+  border: 3px solid rgba($color-blue-dark, 0.1);
+}
