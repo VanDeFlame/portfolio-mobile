@@ -1,0 +1,1 @@
+function r(){return e=>new Promise((o,n)=>{fetch(`https://vandeflame.github.io/portfolio/assets/${e}.json`).then(t=>t.json()).then(t=>{t?o(t):n(new Error(`Error reading ${e}. Empty data`))}).catch(t=>n(t))})}export{r as u};
